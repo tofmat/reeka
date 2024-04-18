@@ -1,5 +1,6 @@
 import { productsList } from "@/utils/constants";
 import { motion } from "framer-motion";
+import ArrowIcon from "@/assets/svg/arrowIcon";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -7,7 +8,29 @@ import Link from "next/link";
 const ProductsMobile = () => {
   return (
     <div className="block md:hidden pt-8 px-2">
-      <motion.div className="flex flex-col gap-4">
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        whileInView={{ opacity: 1, y: 1 }}
+        transition={{ duration: 1.1 }}
+        className="flex flex-col items-center justify-center [&_*]:mx-0 text-center [&_h3]:px-0 [&_p]:px-0"
+      >
+        <motion.h2 className="w-fit mx-auto px-4 py-1 mb-4 text-center text-[#E36B37] rounded-full bg-[#FFEAE0] bg-opacity-30">
+          Property Management
+        </motion.h2>
+        <motion.h3 className="px-4 text-3xl md:text-4xl lg:text-5xl  mb-4 text-center uppercase font-semibold lg:leading-[75px]">
+          What we offer
+        </motion.h3>
+        <motion.div className="flex items-center md:w-full md:justify-center">
+          <motion.button
+            className="flex items-center gap-4 px-6 py-4 text-lg text-white bg-black rounded-full"
+            whileHover={{ scale: 1.1 }}
+          >
+            <span>Book Demo</span>
+            <ArrowIcon />
+          </motion.button>
+        </motion.div>
+      </motion.div>
+      <motion.div className="flex flex-col gap-4 mt-8">
         {productsList.map((product, idx) => {
           return <Card card={product} key={idx} />;
         })}
