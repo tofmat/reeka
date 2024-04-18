@@ -5,7 +5,10 @@ import { ContainerScroll } from "./container-scroll";
 import HeroImg from "@/assets/images/dashboard.png";
 import { motion } from "framer-motion";
 import ArrowIcon from "@/assets/svg/arrowIcon";
+import DemoModal from "./demo-modal";
+import { useDisclosure } from "@chakra-ui/react";
 export function HeroScroll() {
+  const { isOpen, onClose, onOpen } = useDisclosure();
   return (
     <div className="flex flex-col overflow-hidden bg-[#E36B37]">
       <ContainerScroll
@@ -47,6 +50,7 @@ export function HeroScroll() {
                 <motion.button
                   className="flex items-center gap-4 px-6 py-4 mt-10 text-lg text-white bg-black rounded-full"
                   whileHover={{ scale: 1.1 }}
+                  onClick={onOpen}
                 >
                   <span>Book Demo</span>
                   <ArrowIcon />
@@ -65,6 +69,8 @@ export function HeroScroll() {
           draggable={false}
         />
       </ContainerScroll>
+
+      <DemoModal isOpen={isOpen} onClose={onClose} />
     </div>
   );
 }

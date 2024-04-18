@@ -1,11 +1,11 @@
 import { productsList } from "@/utils/constants";
 import { motion } from "framer-motion";
 import ArrowIcon from "@/assets/svg/arrowIcon";
-
-import Image from "next/image";
-import Link from "next/link";
+import DemoModal from "./demo-modal";
+import { useDisclosure } from "@chakra-ui/react";
 
 const ProductsMobile = () => {
+  const { isOpen, onClose, onOpen } = useDisclosure();
   return (
     <div className="block md:hidden pt-8 px-2">
       <motion.div
@@ -24,6 +24,7 @@ const ProductsMobile = () => {
           <motion.button
             className="flex items-center gap-4 px-6 py-4 text-lg text-white bg-black rounded-full"
             whileHover={{ scale: 1.1 }}
+            onClick={onOpen}
           >
             <span>Book Demo</span>
             <ArrowIcon />
@@ -35,6 +36,8 @@ const ProductsMobile = () => {
           return <Card card={product} key={idx} />;
         })}
       </motion.div>
+
+      <DemoModal isOpen={isOpen} onClose={onClose} />
     </div>
   );
 };

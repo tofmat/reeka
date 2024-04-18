@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import Image from "next/image";
-import Logo from "@/assets/svg/logoWhite.svg";
 import { Providers } from "./provider";
+import Navigation from "@/components/nav";
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -20,16 +19,7 @@ export default function RootLayout({
     <html lang="en" className={montserrat.className}>
       <body className="bg-[#FAFAFA]">
         <Providers>
-          <nav className="w-full px-6 md:px-8 py-4 md:py-6 transition-[top] duration-500 bg-[#E36B37] relative z-50">
-            <div className="flex justify-between md:max-w-7xl mx-auto">
-              <Image src={Logo} alt="logo"></Image>
-              <div className="flex items-center md:justify-center">
-                <button className="flex items-center gap-4 px-4 md:px-6 py-2 md:py-3 text-lg text-[#E36B37] font-semibold bg-white rounded-full">
-                  <span>Book Demo</span>
-                </button>
-              </div>
-            </div>
-          </nav>
+          <Navigation />
           {children}
         </Providers>
       </body>

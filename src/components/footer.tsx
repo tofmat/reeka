@@ -5,7 +5,11 @@ import Framer from "@/assets/svg/framer.svg";
 import Twitter from "@/assets/svg/twitter.svg";
 import Instagram from "@/assets/svg/instagram.svg";
 import Image from "next/image";
+import { useDisclosure } from "@chakra-ui/react";
+import DemoModal from "./demo-modal";
 const Footer = () => {
+  const { isOpen, onClose, onOpen } = useDisclosure();
+
   return (
     <React.Fragment>
       <div className="py-10 sm:py-12 md:py-16 lg:py-24 px-4 md:px-6 bg-[#FAFAFA]">
@@ -25,6 +29,7 @@ const Footer = () => {
             <motion.button
               className="flex items-center gap-4 px-6 py-3 text-lg text-black bg-white rounded-xl"
               whileHover={{ scale: 1.1 }}
+              onClick={onOpen}
             >
               <span>Book Demo</span>
             </motion.button>
@@ -59,6 +64,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <DemoModal isOpen={isOpen} onClose={onClose} />
     </React.Fragment>
   );
 };

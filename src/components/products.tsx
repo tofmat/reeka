@@ -4,7 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import ArrowIcon from "@/assets/svg/arrowIcon";
 import { productsList } from "@/utils/constants";
-import { Image } from "@chakra-ui/react";
+import { Image, useDisclosure } from "@chakra-ui/react";
+import DemoModal from "./demo-modal";
 
 const Products = () => {
   const container = useRef(null);
@@ -14,6 +15,7 @@ const Products = () => {
   });
   const [value, setValue] = useState(0);
   const [tabIndex, setTabIndex] = useState(0);
+  const { isOpen, onClose, onOpen } = useDisclosure();
   return (
     <div className="bg-[#FAFAFA]">
       <div className="hidden md:block py-8 md:py-16 lg:py-24 min-h-svh md:max-w-6xl md:mx-auto md:px-6 relative z-50 ">
@@ -33,6 +35,7 @@ const Products = () => {
             <motion.button
               className="flex items-center gap-4 px-6 py-4 text-lg text-white bg-black rounded-full"
               whileHover={{ scale: 1.1 }}
+              onClick={onOpen}
             >
               <span>Book Demo</span>
               <ArrowIcon />
@@ -58,6 +61,8 @@ const Products = () => {
           })}
         </motion.div>
       </div>
+
+      <DemoModal isOpen={isOpen} onClose={onClose} />
     </div>
   );
 };
