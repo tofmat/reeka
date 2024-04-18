@@ -37,27 +37,27 @@ const Footer = () => {
         </div>
       </div>
       <div className="bg-[#FAFAFA] pt-8">
-        <div className="flex justify-between  border-t-2 py-8 max-w-7xl mx-auto  border-[#000000c1]">
+        <div className="flex justify-between px-4 border-t-2 py-8 max-w-7xl mx-auto  border-[#000000c1]">
           <p>Copyright © 2024 Reeka </p>
           <div className="flex gap-2 items-center">
             <Image
               src={Twitter}
-              width={20}
-              height={20}
+              width={25}
+              height={25}
               alt="icon"
               className="cursor-pointer"
             />
             <Image
               src={Instagram}
-              width={20}
-              height={20}
+              width={25}
+              height={25}
               alt="icon"
               className="cursor-pointer"
             />
             <Image
               src={Framer}
-              width={20}
-              height={20}
+              width={25}
+              height={25}
               alt="icon"
               className="cursor-pointer"
             />
