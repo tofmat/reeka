@@ -24,7 +24,13 @@ interface Props {
 }
 const DemoModal = ({ isOpen, onClose }: Props) => {
   return (
-    <Modal isOpen={isOpen} onClose={onClose} scrollBehavior="inside" isCentered>
+    <Modal
+      isOpen={isOpen}
+      onClose={onClose}
+      scrollBehavior="inside"
+      isCentered
+      size={"lg"}
+    >
       <ModalOverlay />
       <ModalContent>
         <ModalHeader>

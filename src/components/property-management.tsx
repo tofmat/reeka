@@ -35,7 +35,7 @@ const PropertyManagement = () => {
             transition={{ duration: 1.2 }}
             className="[&_*]:mx-0 [&_*]:text-left [&_h3]:px-0 [&_h3]:max-w-lg [&_p]:px-0 text-white"
           >
-            <motion.h2 className="w-fit mx-auto py-1 mb-4 text-center text-[#E36B37] rounded-full bg-[#FFEAE0]  bg-opacity-30">
+            <motion.h2 className="w-fit mx-auto px-3 py-1 mb-4 text-center text-[#E36B37] rounded-full bg-[#FFEAE0]  bg-opacity-30">
               Integration Partners
             </motion.h2>
             <motion.h3 className="text-[#091B38] text-xl md:text-2xl mb-4 lg:text-3xl">
