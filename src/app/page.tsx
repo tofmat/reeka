@@ -10,8 +10,8 @@ export default function Home() {
     <main>
       <HeroScroll />
       <PropertyManagement />
-      <Products />
-      <ProductsMobile />
+      {/* <Products />
+      <ProductsMobile /> */}
       <ProductOld />
       <Footer />
     </main>

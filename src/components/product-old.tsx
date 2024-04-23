@@ -5,12 +5,12 @@ import { productsList } from "@/utils/constants";
 import { Image } from "@chakra-ui/react";
 const ProductOld = () => {
   return (
-    <div className="py-10 md:py-8 lg:py-12 max-w-7xl mx-auto px-4 sm:px-8 md:px-14 lg:px-16">
+    <div className="py-10 md:py-8 lg:py-12 max-w-7xl mx-auto px-4 sm:px-8 md:px-14 lg:px-16 flex flex-col gap-8">
       <motion.div
         className={`grid grid-cols-1 md:grid-cols-2 items-center gap-4 md:justify-between md:gap-12`}
-        initial={{ opacity: 0, y: -100 }}
+        initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 1 }}
-        transition={{ duration: 1.2 }}
+        transition={{ duration: 1.1 }}
       >
         <div className="flex flex-col items-start justify-start text-black">
           <p className="w-fit py-1 mb-4 text-[#E36B37] rounded-full bg-[#FFEAE0] px-3">
@@ -31,9 +31,9 @@ const ProductOld = () => {
 
       <motion.div
         className={`grid grid-cols-1 md:grid-cols-2 items-center gap-4 md:justify-between md:gap-12 my:8 md:my-16 lg:my-24`}
-        initial={{ opacity: 0, y: -100 }}
+        initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 1 }}
-        transition={{ duration: 1.2 }}
+        transition={{ duration: 1.15 }}
       >
         <Image
           src={productsList[1].imageSrc}
@@ -54,7 +54,7 @@ const ProductOld = () => {
 
       <motion.div
         className={`grid grid-cols-1 md:grid-cols-2 items-center gap-4 md:justify-between md:gap-12`}
-        initial={{ opacity: 0, y: -100 }}
+        initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 1 }}
         transition={{ duration: 1.2 }}
       >
